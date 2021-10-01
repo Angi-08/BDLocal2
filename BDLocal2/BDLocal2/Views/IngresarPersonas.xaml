@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BDLocal2.Views.IngresarPersonas">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+             
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="ClearButtonVisibility" Value="WhileEditing"/>
+            </Style>
+            
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <ContentPage.Content>
+        <ScrollView>
+            <Frame BackgroundColor="#7FB3D5" CornerRadius="20" BorderColor="#F03280" >
+                <StackLayout Margin="10">
+                    <Label Text="Agregar contacto"
+                           FontSize="Title"
+                           HorizontalTextAlignment="Center"
+                           FontAttributes="Bold"
+                           TextColor="Black"/>
+                    
+                    <StackLayout>
+                        <Label Text="Identificacion"/>
+                        <Entry x:Name="id"
+                       IsEnabled="False"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Nombres"/>
+                        <Entry  x:Name="nombres"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Apellidos"/>
+                        <Entry  x:Name="apellidos"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Celular"/>
+                        <Entry  x:Name="celular" Keyboard="Numeric"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Dirección"/>
+                        <Entry  x:Name="direccion"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Email"/>
+                        <Entry  x:Name="email" Keyboard="Email"
+                            
+                            />
+
+                    </StackLayout>
+
+                    <Button Text="Guardar"
+                        Clicked="Guardar"
+                            BackgroundColor="#F03280"
+                            FontAttributes="Bold"
+                            CornerRadius="20"
+                            HorizontalOptions="CenterAndExpand"/>
+                </StackLayout>
+
+            </Frame>
+            
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

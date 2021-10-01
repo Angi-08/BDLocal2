@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BDLocal2.Views.DetallePersona">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="ClearButtonVisibility" Value="WhileEditing"/>
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+
+    <ContentPage.Content>
+        <ScrollView>
+            <Frame BackgroundColor="#7FB3D5" CornerRadius="20" BorderColor="#F03280">
+                <StackLayout Margin="10">
+
+                    <Label Text="Detalle del contacto" 
+                           FontSize="Title"
+                           HorizontalTextAlignment="Center"
+                           FontAttributes="Bold"/>
+
+                    <StackLayout>
+                        <Label Text="ID"/>
+                        <Entry x:Name="idpersona" Text="{Binding Identificacion}"
+                           IsEnabled="False"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Nombres"/>
+                        <Entry x:Name="nombres" Text="{Binding Nombres}"
+                          />
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Apellidos"/>
+                        <Entry x:Name="apellidos" Text="{Binding Apellidos}"
+                          />
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Celular"/>
+                        <Entry x:Name="celular" Text="{Binding Celular}"
+                          Keyboard="Numeric"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Direccion"/>
+                        <Entry x:Name="direccion" Text="{Binding Direccion}"
+                           />
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="Email"/>
+                        <Entry x:Name="email" Text="{Binding Email}"
+                           />
+                    </StackLayout>
+
+
+                    <Button Text="Editar" Clicked="Editar_Clicked"
+                            BackgroundColor="#F03280"
+                            FontAttributes="Bold"
+                            CornerRadius="20"
+                            HorizontalOptions="CenterAndExpand">
+
+                    </Button>
+
+                </StackLayout>
+            </Frame>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
