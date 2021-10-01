@@ -8,7 +8,6 @@ namespace BDLocal2
 {
     public partial class App : Application
     {
-        public static MasterDetailPage MasterD { get; set; }
 
         private static PersonaDataBase baseDatos;
 

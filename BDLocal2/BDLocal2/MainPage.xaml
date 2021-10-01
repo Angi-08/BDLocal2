@@ -1,8 +1,127 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BDLocal2.MainPage">
 
-    
 
-</MasterDetailPage>
+    <NavigationPage.TitleView>
+        <AbsoluteLayout VerticalOptions="CenterAndExpand" Padding="0" HorizontalOptions="CenterAndExpand">
+            <Image Source="deli" HorizontalOptions="CenterAndExpand" Margin="0,0,0,0" IsAnimationPlaying="False" Aspect="AspectFit" HeightRequest="50"/>
+        </AbsoluteLayout>
+    </NavigationPage.TitleView>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <ScrollView Grid.Row="0">
+            <StackLayout>
+                <StackLayout Margin="0,-100,0,0" >
+                    <Frame BackgroundColor="#F03280" CornerRadius="60" HasShadow="True" HeightRequest="120" HorizontalOptions="FillAndExpand">
+                        <StackLayout Margin="0,0,0,0">
+                            <Frame BackgroundColor="#F03070"  Padding="0" Margin="0,85,0,0" CornerRadius="40" HorizontalOptions="CenterAndExpand" >
+                                <StackLayout Orientation="Horizontal">
+                                    <SearchBar x:Name="busqueda"
+                                               Placeholder="Ingrese el nombre del contacto..." 
+                                               TextColor="Black" 
+                                               HorizontalTextAlignment="Center" 
+                                               Margin="-10,0,0,0" 
+                                               VerticalOptions="FillAndExpand" 
+                                               PlaceholderColor="Black" 
+                                               CancelButtonColor="Blue" 
+                                               Keyboard="Email" 
+                                               TextChanged="Busqueda" 
+                                               MaxLength="50" 
+                                               FontSize="15" 
+                                               HeightRequest="45"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+
+                <Frame BackgroundColor="#7FB3D5" CornerRadius="30">
+                    <ListView x:Name="Lista"
+                      Header="" 
+                      Footer=""
+                        IsPullToRefreshEnabled ="true"
+                          
+                          >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+
+
+
+                                    <Grid>
+                                        <Grid.RowDefinitions >
+                                            <RowDefinition />
+                                            <RowDefinition />
+
+                                        </Grid.RowDefinitions>
+
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition />
+                                            <ColumnDefinition />
+                                            <ColumnDefinition />
+                                        </Grid.ColumnDefinitions>
+
+                                        <Label Text="{Binding NombreCompleto}" 
+                                           Grid.Row="0"
+                                           Grid.Column="0"
+                                           TextColor="Black"
+                                           FontSize="16"
+                                           HorizontalOptions="Center"
+                                               FontAttributes="Bold"/>
+                                        <Label Text="{Binding Celular}"
+                                          
+                                                   Grid.Column="0"
+                                                   Grid.Row="1"
+                                           TextColor="Black"
+                                           FontSize="16"
+                                           HorizontalOptions="Center"/>
+                                        <Button x:Name="botonVer"  Text="Ver"
+                                                 Grid.Column="2"
+                                                 Grid.RowSpan="2"        
+                                                 BackgroundColor="#F03280"
+                                                 Clicked="Ver"
+                                                 FontAttributes="Bold"
+                                                    CornerRadius="20"/>
+                                        <ImageButton Source="eliminar.png"
+                                                 Grid.Column="3"
+                                                         Grid.RowSpan="2"
+                                                 BackgroundColor="#F03280"
+                                                 Clicked="Eliminar"
+                                                         CornerRadius="20"
+                                                         />
+                                    </Grid>
+
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+
+
+
+                    </ListView>
+
+                </Frame>
+
+            </StackLayout>
+        </ScrollView>
+
+
+        <Button Grid.Row="0" Text="+"
+                FontAttributes="Bold" 
+                BackgroundColor="#F03280" 
+                BorderRadius="50"
+                TextColor="White"
+                FontSize="26"
+                HorizontalOptions="End" 
+                WidthRequest="80" 
+                HeightRequest="80" 
+                Margin="0,0,20,22" 
+                VerticalOptions="End"
+                Clicked="IngresarPersona"/>
+
+    </Grid>
+    </ContentPage>

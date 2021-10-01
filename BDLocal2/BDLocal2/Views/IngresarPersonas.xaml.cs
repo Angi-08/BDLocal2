@@ -16,22 +16,13 @@ namespace BDLocal2.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class IngresarPersonas : ContentPage
     {
-        Detalle d;
+        MainPage d;
         
-        public IngresarPersonas(Detalle detalle)
+        public IngresarPersonas(MainPage detalle)
         {
             InitializeComponent();
             d = detalle;
         }
-
-     
-
-        
-
-
-
-
-
 
 
         private async void Guardar(object sender, EventArgs e)
